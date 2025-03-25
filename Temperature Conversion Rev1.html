@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Temperature Converter</title>
+</head>
+<body>
+    <main>
+        <h1>Convert from Fahrenheit to Celsius</h1>
+        <script>
+
+            "use strict";
+
+            //This was an entry level program in my JavaScript class to create a Temperature Converter
+			//I had already been through Netacad's JavaScript Essentials course, so there are a few extra components outside of the 
+			//scope of the original assignment. Particularly the switch statement and the error checking.
+
+            //I chose the function approach to simplify the recursion based error checking
+
+            function convertTemp() {
+
+            //Enter the starting temperature & convert from str to number
+
+            let startTemp = Number(prompt("Please enter temperature to be converted: "));
+
+            //Choose the desired conversion
+
+            let chooseConv = window.prompt("Please enter desired conversion: \n 1. 'f' for Celsius to Farenheit \n 2. 'c' for Farenheit to Celsius").toUpperCase();
+
+            //Initialize result
+
+            let result;
+
+            //Conversion logic
+
+            if (!Number.isNaN(startTemp)) {
+			
+				// The switch function has become one of my new favorite functions. Especially since I learned it exists in both JavaScript and Python.
+			
+                switch (chooseConv) {
+                    case "F": result = startTemp * (9/5) + 32; alert(`Converted temperature is ${result.toFixed(1)} degrees Farenheit`);break;
+                    case "C": result = (startTemp - 32)*(5/9); alert(`Converted temperature is ${result.toFixed(1)} degrees Celcius`);break;
+
+                    //Error checking for conversion
+
+                    default: result = "Error: Invalid Selection. Please select 'f' or 'c' to choose."; alert(result); convertTemp();
+                }
+            } else {
+
+                //Error checking for temperature
+
+                result = "Error: Entered temperature is not a number. ";
+                alert(result);
+                convertTemp();
+            }
+            }
+
+            //Function call
+
+            convertTemp();
+
+
+
+            
+        </script>
+    </main>
+</body>
+</html>
