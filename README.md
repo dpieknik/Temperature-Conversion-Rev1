@@ -12,6 +12,7 @@ interaction.
 
 - <b>Visual Studio Code</b> 
 - <b>JavaScript</b>
+- <b>HTML</b>
 
 <h2>Environments Used </h2>
 
